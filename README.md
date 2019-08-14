@@ -6,3 +6,7 @@ whoami is available as a Docker image, and can also be found on [Docker Hub](htt
 ```sh
 docker run multimikael/whoami
 ```
+If your desired architecture is not available, you can try to build the image yourself by:
+```sh
+docker build -t multimikael/whoami .
+```
