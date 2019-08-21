@@ -1,7 +1,7 @@
 FROM golang:latest
 
-WORKDIR /app
+WORKDIR /whoami
 COPY . .
-RUN make
+RUN go build -v
 
 CMD ["./whoami"]

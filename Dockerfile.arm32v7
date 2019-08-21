@@ -1,0 +1,14 @@
+# Dockerfile for cross building to arm32v7
+ARG ARCH=arm32v7
+FROM ${ARCH}/golang:buster
+
+ADD qemu-arm-static /usr/bin
+
+WORKDIR /whoami
+COPY . .
+ENV GOOS=linux
+ENV GOARCH=arm
+ENV GOARM=7
+RUN go build -v
+
+CMD ["./whoami"]
